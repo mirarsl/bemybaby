@@ -48,6 +48,13 @@
                                     </div>
                                     <span class="h4 mb-0 main-slider__video-title">Tanıtımı İzle</span>
                                 </div>
+                                @else
+                                <div class="main-slider__btn-box">
+                                    <div class="main-slider__video-box">
+                                        <div class="main-slider__video-link">
+                                        </div>
+                                    </div>
+                                </div>
                                 @endif
                             </div>
                         </div>

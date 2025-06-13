@@ -13,7 +13,7 @@
     {!! JsonLd::generate() !!}
     
     
-    <link rel="icon" href="/assets/favicon.png" type="image/x-icon"/>
+    <link rel="icon" href="/assets/images/favicon.png" type="image/x-icon"/>
     
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -39,11 +39,13 @@
     <link rel="stylesheet" href="/assets/css/module-css/footer.css" />
 
     <link rel="stylesheet" href="/assets/css/style.css" />
-    <link rel="stylesheet" href="/assets/css/responsive.css" />
     
     @stack('links')
     {!! setting('site.header_libs') !!}
     @stack('styles')
+
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+
 </head>
 <body class="custom-cursor">
     <div class="custom-cursor__cursor"></div>

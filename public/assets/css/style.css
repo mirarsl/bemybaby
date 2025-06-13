@@ -34,6 +34,7 @@ body {
   line-height: 28px;
   font-weight: 400;
   z-index: 1;
+  overflow-x: hidden;
 }
 
 
@@ -449,7 +450,7 @@ ul {
   animation-duration: 2s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  background-image: url(../images/loader.png);
+  background-image: url(../images/preloader.webp);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 60px auto;

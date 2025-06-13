@@ -289,10 +289,6 @@
         margin-top: 40px;
     }
 
-    .footer-widget__social-media {
-        margin-top: 40px;
-    }
-
     .about-two__left {
         max-width: 600px;
         margin: 0 auto 0;
@@ -1293,7 +1289,7 @@
     }
 
     .services-one__left {
-        margin-top: 0;
+        margin-top: 60px;
     }
 
     .services-one__right {
@@ -1315,9 +1311,25 @@
     .brand-one {
         padding: 68px 0 62px;
     }
+    .brand-two{
+        margin-bottom: unset;;
+    }
+    .brand-two .container{
+        padding:0;
+    }
+    .brand-two__inner{
+        border-radius: 0;
+    }
 
     .project-one {
-        padding: 80px 0 0;
+        padding: 80px 0;
+    }
+
+    .project-one .section-title-three{
+        width: 100%;
+    }
+    .project-one .project-one__text{
+        width: 100%;
     }
 
     .project-one__content {
@@ -1443,7 +1455,6 @@
 
     .footer-widget__services {
         margin-left: 0;
-        margin-top: 38px;
     }
 
     .footer-widget__page-link {
@@ -1453,6 +1464,17 @@
 
     .footer-widget__social-media {
         margin-top: 38px;
+    }
+    .footer-widget__social-media .footer-widget__services-link-list{
+        flex-wrap: wrap;
+        display: flex;
+    }
+    .footer-widget__social-media .footer-widget__services-link-list li{
+        width: 50%;
+        margin-bottom: 15px
+    }
+    .footer-widget__services-link-list li+li{
+        margin-top: 0;
     }
 
     .site-footer__bottom-inner {
@@ -1538,10 +1560,6 @@
         padding: 50px 0 0;
     }
 
-    .why-choose-one__left {
-        margin-top: 0;
-    }
-
     .why-choose-one__btn-and-call-box {
         gap: 25px;
         flex-direction: column;
@@ -1555,7 +1573,7 @@
     }
 
     .why-choose-one {
-        padding: 80px 0 0;
+        padding: 80px 0;
     }
 
     .appiontment-one__inner {
@@ -1969,7 +1987,9 @@
     .team-four {
         padding: 80px 0 180px;
     }
-
+    .counter-three{
+        margin-top: 0;
+    }
     .counter-three__inner {
         padding: 40px 15px 10px;
     }
@@ -1981,11 +2001,11 @@
 
     .faq-three__left .faq-one-accrodion .accrodion-title {
         padding: 21px 35px 21px;
-        padding-left: 30px;
+        padding-left: 50px;
     }
 
     .faq-three-accrodion__count {
-        left: 4px;
+        left: 10px;
     }
 
     .faq-three__left .faq-one-accrodion .accrodion-title h4::before {
@@ -1993,7 +2013,7 @@
     }
 
     .faq-three__left .faq-one-accrodion .accrodion-content {
-        padding-left: 30px;
+        padding-left: 50px;
     }
 
     .faq-three__right {
@@ -2183,6 +2203,7 @@
         padding: 50px 0 0;
     }
 
+    
     .testimonial-five__single {
         padding: 40px 15px 38px;
     }
@@ -2206,6 +2227,9 @@
         padding: 50px 0 0;
     }
 
+    .testimonial-five__carousel .owl-stage-outer .owl-stage{
+        align-items: start;
+    }
     .testimonial-five__carousel.owl-theme .owl-nav {
         margin: 30px auto 0 !important;
     }
@@ -2788,6 +2812,10 @@
         padding: 80px 0px 80px;
     }
 
+    .scroll-to-top{
+        display: none;
+    }
+
 
 
 
@@ -3238,14 +3266,15 @@
 
 
 
-
-
     .main-slider__img-box {
-        display: none;
+        position: absolute;
+        bottom: 0;
+        opacity: 0.25 !important;
+        right: -30%;
     }
 
     .main-slider__title {
-        font-size: 40px;
+        font-size: 60px !important;
     }
 
     .main-slider__text br {
@@ -3253,7 +3282,6 @@
     }
 
     .main-slider__btn-and-video-box {
-        flex-direction: column;
         align-items: baseline;
         gap: 20px;
     }
@@ -3581,6 +3609,19 @@
     .main-menu-five__wrapper-inner {
         padding: 0px 15px 0px;
     }
+    #main-slider-pagination{
+        top: unset !important;
+        bottom: 0;
+        flex-direction: row !important;
+        gap: 15px;
+    }
+    .main-slider__img{
+        height: 500px !important;
+    }
+    .main-slider .container{
+        padding-top: 200px !important;
+        padding-bottom: 100px !important;
+    }
 
 
 
@@ -3595,6 +3636,9 @@
     .main-menu__thm-btn .thm-btn{
         font-size: 14px;
         padding: 10px 20px;
+    }
+    .main-slider__title {
+        font-size: 40px !important;
     }
 }
 

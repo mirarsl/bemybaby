@@ -105,6 +105,7 @@
 .footer-widget__contact-info {
     position: relative;
     display: block;
+    margin-bottom: 40px;
 }
 
 .footer-widget__contact-list {

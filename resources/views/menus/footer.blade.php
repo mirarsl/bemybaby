@@ -1,5 +1,5 @@
 @foreach($items as $menu_item)
-<div class="col-xl col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+<div class="col-xl col-6 wow fadeInUp" data-wow-delay="200ms">
     <div class="footer-widget__services">
         <h2 class="footer-widget__title">{{$menu_item->getTranslatedAttribute('title')}}</h2>
         @if (count($menu_item->children) > 0 || isset($menu_item->app_model))
