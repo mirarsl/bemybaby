@@ -1,15 +1,15 @@
 @unless ($breadcrumbs->isEmpty())
     <nav aria-label="breadcrumb">
-        <div class="meta">
+        <ul class="thm-breadcrumb list-unstyled">
             @foreach ($breadcrumbs as $breadcrumb)
             
             @if ($breadcrumb->url && !$loop->last)
-            <div class="prev"><a href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}</a></div>
+            <li><a href="{{ $breadcrumb->url }}">{{ $breadcrumb->title }}</a></li>
+            <li><span class="icon-arrow-left"></span></li>
             @else
-            <div class="next"><span aria-current="page">{{ $breadcrumb->title }}</span></div>
+            <li aria-current="page">{{ $breadcrumb->title }}</li>
             @endif
-            
             @endforeach
-        </div>
+        </ul>
     </nav>
 @endunless

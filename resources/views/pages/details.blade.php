@@ -13,26 +13,25 @@
     @endisset
 @endsection
 @section('content')
-<div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg_image" @if($Meta->image) style="background-image: url({{Voyager::image($Meta->image)}})" @elseif(isset($Meta->color)) style="background-color:{{$Meta->color}}" @endif>
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);">
+    </div>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb-inner text-center">
-                    <h1 class="title">{{$Page->getTranslatedAttribute('title')}}</h1>
-                    @if($Page->getTranslatedAttribute('hero'))
-                    <p class="disc">{{$Page->getTranslatedAttribute('hero')}}</p>
-					@elseif($Page->getTranslatedAttribute('spot'))
-					<p class="disc">{{$Page->getTranslatedAttribute('spot')}}</p>
-					@else
-					<p class="disc"></p>
-                    @endif
-                    {!! Breadcrumbs::view('breadcrumbs.index','page') !!}
-                    {!! Breadcrumbs::view('breadcrumbs::json-ld','page') !!}
-                </div>
+        <div class="page-header__inner">
+            <h3>About Us</h3>
+            <div class="thm-breadcrumb__inner">
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="index.html">Home</a></li>
+                    <li><span class="icon-arrow-left"></span></li>
+                    <li>About Us</li>
+                </ul>
             </div>
         </div>
     </div>
-</div>
+</section>
 @yield('details')
 @yield('modules')
 @endsection
+@push('links')
+<link rel="stylesheet" href="/assets/css/module-css/page-header.css" />
+@endpush

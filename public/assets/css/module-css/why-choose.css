@@ -4,94 +4,22 @@
 .why-choose-one {
     position: relative;
     display: block;
-    background-color: var(--bemybaby-extra);
     padding: 111px 0;
     z-index: 1;
+}
+.why-choose-one ~ .counter-three{
+    padding-top: 100px;
 }
 
 .why-choose-one__left {
     position: relative;
     display: block;
-    margin-top: 90px;
     overflow: hidden;
+    text-align: right;
 }
 
 .why-choose-one__left .section-title-two {
     margin-bottom: 22px;
-}
-
-.why-choose-one__progress-list {
-    position: relative;
-    display: block;
-    margin: 31px 0 30px;
-}
-
-.why-choose-one__progress-list li {
-    position: relative;
-    display: block;
-}
-
-.why-choose-one__progress-list li+li {
-    margin-top: 31px;
-}
-
-.why-choose-one__progress {
-    position: relative;
-    display: block;
-}
-
-.why-choose-one__progress-title {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 28px;
-    color: var(--bemybaby-black);
-    margin-bottom: 11px;
-    text-transform: capitalize;
-}
-
-.why-choose-one__progress .bar {
-    width: 100%;
-    height: 10px;
-    background-color: var(--bemybaby-black);
-    border-radius: 5px;
-}
-
-.why-choose-one__progress .bar-inner {
-    display: block;
-    width: 0px;
-    height: 10px;
-    border-radius: 5px;
-    background-color: var(--bemybaby-gray);
-    -webkit-transition: all 1500ms ease;
-    -ms-transition: all 1500ms ease;
-    -o-transition: all 1500ms ease;
-    -moz-transition: all 1500ms ease;
-    transition: all 1500ms ease;
-}
-
-.why-choose-one__progress .count-text {
-    position: absolute;
-    right: -10px;
-    bottom: 22px;
-    color: var(--bemybaby-black);
-    line-height: 26px;
-    font-size: 18px;
-    text-align: center;
-    font-weight: 700;
-    opacity: 0;
-    -webkit-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    -moz-transition: all 500ms ease;
-    transition: all 500ms ease;
-}
-
-.why-choose-one__progress .bar-inner.counted .count-text {
-    opacity: 1;
-}
-
-.why-choose-one__progress .bar.marb-0 {
-    margin-bottom: 0;
 }
 
 .why-choose-one__btn-and-call-box {

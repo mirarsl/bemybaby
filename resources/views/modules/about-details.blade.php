@@ -1,31 +1,25 @@
-<div class="rts-about-area-about rts-section-gap">
-    <div class="container pb--45 plr_sm--15">
-        <div class="row">
-            <div class="col-lg-5">
-                <div class="thumbnail-area-about">
-                    <img src="{{Voyager::image($Page->data()->first()->image2)}}" alt="about-area">
-                    <a class="rts-btn btn-primary" href="{{route('page',['slug'=>__('about.link')])}}">{{__('about.title')}}</a>
-                </div>
-            </div>
-            <div class="col-lg-7 about-a-p-cont">
-                <div class="about-inner-wrapper-inner">
-                    <div class="title-three-left">
-                        <span class="pre-title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800" style="display: block;">
-                            {{ $Page->getTranslatedAttribute('title') }}
+<section class="about-one about-six">
+    <div class="container">
+        <div class="about-one__inner">
+            <div class="about-one__img-box">
+                <div class="about-one__content-box wow slideInLeft" data-wow-delay="100ms"
+                    data-wow-duration="2500ms">
+                    <div class="section-title text-left sec-title-animation animation-style2">
+                        <span class="h6 section-title__tagline">{{$Page->data()->first()->getTranslatedAttribute('history')}}
                         </span>
-                        <h2 class="title" data-sal="slide-up" data-sal-delay="100" data-sal-duration="800">
-                            {{setting('site.title')}}
+                        <h2 class="h3 section-title__title title-animation">{{$Page->data()->first()->getTranslatedAttribute('title')}}
                         </h2>
                     </div>
-                    <div class="main-content-area-about-p">
-                        {!! $Page->data()->first()->about !!}
-
-                    </div>
+                    <div class="about-one__text">{!! $Page->data()->first()->getTranslatedAttribute('about') !!}</div>
+                </div>
+                <div class="about-one__img">
+                    <img src="{{Voyager::image($Page->data()->first()->image1)}}" alt="{{$Page->data()->first()->getTranslatedAttribute('title')}}">
                 </div>
             </div>
         </div>
-        <div class="bg-text">
-            <h2 class="title">{{$Page->getTranslatedAttribute('top')}}</h2>
-        </div>
     </div>
-</div>
+</section>
+
+@push('styles')
+<link rel="stylesheet" href="assets/css/module-css/about.css" />
+@endpush

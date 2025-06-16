@@ -957,7 +957,7 @@
 .project-carousel-page {
     position: relative;
     display: block;
-    padding: 120px 0 170px;
+    padding: 120px 0;
 }
 
 .project-carousel-page .project-two__single {

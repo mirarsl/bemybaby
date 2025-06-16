@@ -27,7 +27,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, #BEE1E6 0%, rgba(190, 225, 230, 0) 100%);
+    background: linear-gradient(90deg, rgb(255 255 255 / 40%), #BEE1E6);
 }
 
 .page-header__inner {
@@ -37,11 +37,11 @@
     z-index: 15;
 }
 
-.page-header__inner h3 {
-    font-size: 40px;
-    color: var(--bemybaby-black);
-    line-height: 40px;
-    font-weight: 500;
+.page-header__inner .h3 {
+    font-size: 50px;
+    color: var(--bemybaby-base);
+    line-height: 50px;
+    font-weight: 900;
     margin-bottom: 18px;
 }
 
@@ -61,7 +61,7 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 18px;
-    color: var(--bemybaby-black);
+    color: var(--bemybaby-base);
     text-transform: capitalize;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
@@ -77,7 +77,7 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 18px;
-    color: var(--bemybaby-black);
+    color: var(--bemybaby-base);
     text-transform: capitalize;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;

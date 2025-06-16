@@ -2380,3 +2380,6 @@ ul {
 .position-sticky {
   top:120px
 }
+.text-justify{
+  text-align: justify;
+}

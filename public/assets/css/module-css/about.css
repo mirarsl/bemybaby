@@ -7,16 +7,17 @@
     padding: 90px 0 120px;
     z-index: 1;
 }
-
-.about-one__inner {
+.about-one .container {
     position: relative;
+}
+.about-one__inner {
+    /* position: relative; */
     display: block;
     margin-left: 320px;
-    margin-right: 240px;
 }
 
 .about-one__img-box {
-    position: relative;
+    /* position: relative; */
     display: block;
 }
 
@@ -53,9 +54,9 @@
 
 .about-one__content-box {
     position: absolute;
-    top: 230px;
-    left: -320px;
-    max-width: 477px;
+    top: inherit;
+    left: 0;
+    max-width: 50%;
     width: 100%;
     border-radius: var(--bemybaby-bdr-radius);
     background-color: #FFF3EA;
@@ -96,52 +97,6 @@
     color: var(--bemybaby-black);
 }
 
-.about-one__working-hour {
-    position: absolute;
-    top: 33px;
-    right: -240px;
-    max-width: 410px;
-    width: 100%;
-    padding: 31px 30px 30px;
-    border: 1px solid var(--bemybaby-bdr-color);
-    border-radius: var(--bemybaby-bdr-radius);
-    background-color: var(--bemybaby-white);
-    box-shadow: 0px 16px 32px -4px rgba(12, 12, 13, 0.1), 0px 4px 4px -4px rgba(12, 12, 13, 0.05);
-    z-index: 2;
-}
-
-.about-one__working-hour-title {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 40px;
-    margin-bottom: 30px;
-}
-
-.about-one__working-hour-list {
-    position: relative;
-    display: block;
-}
-
-.about-one__working-hour-list li {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid var(--bemybaby-bdr-color);
-    padding: 14px 30px 13px;
-    border-radius: var(--bemybaby-bdr-radius);
-}
-
-.about-one__working-hour-list li+li {
-    margin-top: 20px;
-}
-
-.about-one__working-hour-list li p {
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 28px;
-    color: var(--bemybaby-black);
-}
 
 /*--------------------------------------------------------------
 # About Two
@@ -1246,7 +1201,6 @@
 
 .about-six .about-one__content-box {
     background-color: var(--bemybaby-extra);
-    top: inherit;
     bottom: 0;
 }
 

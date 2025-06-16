@@ -532,35 +532,39 @@
   
   //Projects Page Carousel
   if ($(".project-carousel-style").length) {
-    $(".project-carousel-style").owlCarousel({
-      loop: true,
-      margin: 30,
-      nav: false,
-      dots: true,
-      smartSpeed: 500,
-      autoplay: true,
-      autoplayTimeout: 7000,
-      navText: [
-        '<span class="icon-right-arrow-1"></span>',
-        '<span class="icon-right-arrow-1"></span>',
-      ],
-      responsive: {
-        0: {
-          items: 1,
+    $(".project-carousel-style").each(function () {
+      var carousel = $(this);
+      carousel.owlCarousel({
+        loop: carousel.data('count') > 2,
+        margin: 30,
+        center: true,
+        nav: carousel.data('count') > 3,
+        dots: carousel.data('count') > 3,
+        smartSpeed: 500,
+        autoplay: true,
+        autoplayTimeout: 7000,
+        navText: [
+          '<span class="icon-right-arrow-1"></span>',
+          '<span class="icon-right-arrow-1"></span>',
+        ],
+        responsive: {
+          0: {
+            items: 1,
+          },
+          768: {
+            items: 2,
+          },
+          992: {
+            items: 3,
+          },
+          1200: {
+            items: 3,
+          },
+          1320: {
+            items: 3,
+          },
         },
-        768: {
-          items: 2,
-        },
-        992: {
-          items: 3,
-        },
-        1200: {
-          items: 3,
-        },
-        1320: {
-          items: 3,
-        },
-      },
+      });
     });
   }
   

@@ -4,7 +4,8 @@
 .feature-one {
     position: relative;
     display: block;
-    padding: 120px 0 0;
+    background-color: var(--bemybaby-extra);
+    padding: 120px 0 80px;
     z-index: 1;
 }
 
@@ -15,21 +16,31 @@
 
 .feature-one__feature-list {
     position: relative;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .feature-one__feature-list li {
     position: relative;
-    display: flex;
+    display: flex
+;
     align-items: center;
     justify-content: space-between;
-    border: 2px solid var(--bemybaby-bdr-color);
-    padding: 28px 38px 28px;
+    border: 1px solid var(--bemybaby-bdr-color);
+    padding: 20px;
     margin-bottom: 30px;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
     overflow: hidden;
     z-index: 1;
+    width: calc(50% - 5px);
+    border-radius: 10px;
+}
+@media (max-width: 1200px) {
+    .feature-one__feature-list li {
+        width: 100%;
+    }
 }
 
 .feature-one__feature-list li:hover {
@@ -59,14 +70,21 @@
     transform: scale(1, 1);
     transform-origin: top center;
 }
+.feature-one__feature-list li:hover .feature-one__feature-list-title{
+    color: white;
+}
+.feature-one__feature-list li:hover .feature-one__feature-list-sub-title{
+    color: white;
+}
 
 .feature-one__feature-list-left {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 15px;
     max-width: 450px;
     width: 100%;
+    padding-right: 1em;
 }
 
 .feature-one__feature-list-icon {
@@ -74,24 +92,33 @@
     display: inline-block;
 }
 
-.feature-one__feature-list-icon span {
+.feature-one__feature-list-icon svg {
     position: relative;
     display: inline-block;
-    font-size: 46px;
+    width: 46px;
+    height: 46px;
     color: var(--bemybaby-black);
     transition: all 500ms linear;
     transition-delay: 0.1s;
     transform: scale(1);
 }
 
-.feature-one__feature-list li:hover .feature-one__feature-list-icon span {
+.feature-one__feature-list-icon svg path{
+    fill: var(--bemybaby-black);
+}
+
+.feature-one__feature-list li:hover .feature-one__feature-list-icon svg {
     transform: scale(0.9);
 }
 
+.feature-one__feature-list li:hover .feature-one__feature-list-icon svg path{
+    fill: var(--bemybaby-white);
+}
+
 .feature-one__feature-list-title {
-    font-size: 30px;
+    font-size: 24px;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 30px;
     text-transform: capitalize;
 }
 
@@ -114,7 +141,7 @@
 
 .feature-one__feature-list-sub-title {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 28px;
     text-transform: capitalize;
     color: var(--bemybaby-black);

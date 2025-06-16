@@ -38,6 +38,7 @@
     
     <link rel="stylesheet" href="/assets/css/module-css/footer.css" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.css"/>
     <link rel="stylesheet" href="/assets/css/style.css" />
     
     @stack('links')
@@ -289,6 +290,10 @@
     <script>
         var mySVGsToInject = document.querySelectorAll('img.inject-me');
         SVGInjector(mySVGsToInject);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind("[data-fancybox]");
     </script>
     @stack('scripts')
 

@@ -1,21 +1,21 @@
 @extends('layout.master')
 @section('content')
-<div class="rts-bread-crumb-area ptb--150 ptb_sm--100 bg_image" @if($Page->image) style="background-image: url({{Voyager::image($Page->image)}})" @elseif(isset($Page->color)) style="background-color:{{$Page->color}}" @endif>
+<section class="page-header">
+    <div class="page-header__bg" style="background-image: url({{Voyager::image($Page->image)}});">
+    </div>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb-inner text-center">
-                    <h1 class="title">{{$Page->getTranslatedAttribute('title')}}</h1>
-                    @if($Page->getTranslatedAttribute('hero'))
-                    <p class="disc">{{$Page->getTranslatedAttribute('hero')}}</p>
-                    @endif
-                    {!! Breadcrumbs::view('breadcrumbs.index','page') !!}
-                    {!! Breadcrumbs::view('breadcrumbs::json-ld','page') !!}
-                </div>
+        <div class="page-header__inner">
+            <h1 class="h3">{{$Page->getTranslatedAttribute('title')}}</h1>
+            @if($Page->getTranslatedAttribute('hero'))
+            <p>{{$Page->getTranslatedAttribute('hero')}}</p>
+            @endif
+            <div class="thm-breadcrumb__inner">
+                {!! Breadcrumbs::view('breadcrumbs.index','page') !!}
+                {!! Breadcrumbs::view('breadcrumbs::json-ld','page') !!}
             </div>
         </div>
     </div>
-</div>
+</section>
 
 @if (!(empty($Page->data())))
     @if (View::exists('modules.' . $Page->list_name))
@@ -58,3 +58,6 @@
     </ul>
 </li>
 @endsection
+@push('links')
+<link rel="stylesheet" href="/assets/css/module-css/page-header.css" />
+@endpush
