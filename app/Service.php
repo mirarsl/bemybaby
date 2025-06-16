@@ -9,7 +9,7 @@ use App\Voyager\Traits\Translatable;
 class Service extends Model
 {    
     use Translatable;
-    protected $translatable = ['title', 'text','spot','slug','speciality','nutrition','image','icon','heats'];
+    protected $translatable = ['title', 'text','spot','slug','speciality','nutrition','image','icon','heats','store'];
 
      public function scopeActive($query)
      {
@@ -25,6 +25,5 @@ class Service extends Model
     {
         return $query->orderBy('ordering')->orderBy('id','desc');
     }
-    
 
 }

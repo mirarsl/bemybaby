@@ -181,7 +181,7 @@ class PageController extends Controller
         $Page = Service::whereTranslation('slug','=', $request->slug, [app()->getLocale()],app()->getLocale() == 'tr' ? true:false)->first();
         if (empty($Page)) abort(404);
         $Meta = Page::where('slug', 'urunler')->first();
-        $Other = Service::active()->order()->limit(3)->get();
+        $Other = Service::active()->order()->limit(3)->get()->except($Page->id);
         $Route = 'product';
         
         SEOTools::setTitle($Page->getTranslatedAttribute('meta_title') != '' ? $Page->getTranslatedAttribute('meta_title') : $Page->getTranslatedAttribute('title'));

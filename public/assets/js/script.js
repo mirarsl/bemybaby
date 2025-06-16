@@ -645,35 +645,38 @@
   
   //Related Products Carousel
   if ($(".related-products__carousel").length) {
-    $(".related-products__carousel").owlCarousel({
-      loop: true,
-      margin: 30,
-      nav: false,
-      dots: false,
-      smartSpeed: 500,
-      autoplay: true,
-      autoplayTimeout: 2000,
-      navText: [
-        '<span class="icon-left-arrow"></span>',
-        '<span class="icon-right-arrow"></span>',
-      ],
-      responsive: {
-        0: {
-          items: 1,
+    $(".related-products__carousel").each(function () {
+      var carousel = $(this);
+      carousel.owlCarousel({
+        loop: carousel.data('count') > 3,
+        margin: 30,
+        nav: false,
+        dots: false,
+        smartSpeed: 500,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        navText: [
+          '<span class="icon-left-arrow"></span>',
+          '<span class="icon-right-arrow"></span>',
+        ],
+        responsive: {
+          0: {
+            items: 1,
+          },
+          768: {
+            items: 2,
+          },
+          992: {
+            items: carousel.data('count') > 3 ? 3 : carousel.data('count'),
+          },
+          1200: {
+            items: carousel.data('count') > 3 ? 3 : carousel.data('count'),
+          },
+          1320: {
+            items: carousel.data('count') > 3 ? 3 : carousel.data('count'),
+          },
         },
-        768: {
-          items: 2,
-        },
-        992: {
-          items: 3,
-        },
-        1200: {
-          items: 3,
-        },
-        1320: {
-          items: 4,
-        },
-      },
+      });
     });
   }
   
@@ -725,22 +728,41 @@
   
   
   if ($("#shop-details-one__thumb").length) {
-    let testimonialsThumb = new Swiper("#shop-details-one__thumb", {
-      slidesPerView: 3,
-      spaceBetween: 0,
-      speed: 1400,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-      loop: true,
-      autoplay: {
-        delay: 5000
-      }
+    let testimonialsThumb;
+    $("#shop-details-one__thumb").each(function () {
+      var carousel = $(this);
+      testimonialsThumb = new Swiper(carousel, {
+        slidesPerView: carousel.data('count') >= 4 ? 4 : carousel.data('count'),
+        spaceBetween: 0,
+        speed: 1400,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        loop: true,
+        autoplay: {
+          delay: 5000
+        },
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          992: {
+            slidesPerView: 3,
+          },
+          1200: {
+            slidesPerView: carousel.data('count') >= 4 ? 4 : carousel.data('count'),
+          },
+        }
+      });
     });
     
     let testimonialsCarousel = new Swiper("#shop-details-one__carousel", {
       observer: true,
       observeParents: true,
       loop: true,
+      spaceBetween: 30,
       speed: 1400,
       mousewheel: false,
       slidesPerView: 1,

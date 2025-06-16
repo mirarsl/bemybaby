@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="main-menu__right">
                                     <div class="main-menu__thm-btn">
-                                        <a href="tel:{{$sharedContent['Contact']->phone1}}" class="thm-btn">Mağaza <span class="fas fa-cart-plus"></span> </a>
+                                        <a target="_blank" rel="nofollow" href="https://www.e-bebek.com/search?q=:relevance:allCategories:4432:brand:1994:relevance::gender:Unisex" class="thm-btn">Mağaza <span class="fas fa-cart-plus"></span> </a>
                                     </div>
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 </div>
@@ -211,7 +211,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="{{route('home')}}" aria-label="logo image">
+                <a href="{{route('home')}}" aria-label="logo image" rel="dofollow">
                     <img src="/assets/logo.png" width="135" alt="{{setting('site.title')}}" />
                 </a>
             </div>
@@ -296,6 +296,7 @@
         Fancybox.bind("[data-fancybox]");
     </script>
     @stack('scripts')
+    @stack('modals')
 
     <script src="/assets/js/script.js"></script>
 </body>

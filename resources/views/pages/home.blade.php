@@ -23,7 +23,7 @@
 @push('page_codes')
 {!! $Page->page_codes !!}
 @endpush
-@if($sharedContent['Popup']->status)
+{{-- @if($sharedContent['Popup']->status)
     @if(!session()->has('popup_status'))
         @push('modals')
         <!-- Popup Modal -->
@@ -144,4 +144,4 @@
         }
         @endphp
     @endif
-@endif
+@endif --}}

@@ -9,7 +9,7 @@
             @if($Page->getTranslatedAttribute('hero'))
             <p>{{$Page->getTranslatedAttribute('hero')}}</p>
             @endif
-            <div class="thm-breadcrumb__inner">
+            <div class="thm-breadcrumb__inner mt-2">
                 {!! Breadcrumbs::view('breadcrumbs.index','page') !!}
                 {!! Breadcrumbs::view('breadcrumbs::json-ld','page') !!}
             </div>

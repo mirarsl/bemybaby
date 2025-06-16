@@ -14,17 +14,19 @@
 @endsection
 @section('content')
 <section class="page-header">
-    <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg);">
+    <div class="page-header__bg" style="background-image: url({{Voyager::image($Page->banner ?? $Meta->image)}});">
     </div>
     <div class="container">
         <div class="page-header__inner">
-            <h3>About Us</h3>
-            <div class="thm-breadcrumb__inner">
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="index.html">Home</a></li>
-                    <li><span class="icon-arrow-left"></span></li>
-                    <li>About Us</li>
-                </ul>
+            <h1 class="h3">{{$Page->getTranslatedAttribute('title')}}</h1>
+            @if($Page->getTranslatedAttribute('hero'))
+            <p>{{$Page->getTranslatedAttribute('hero')}}</p>
+            @elseif($Page->getTranslatedAttribute('spot'))
+            <p>{{$Page->getTranslatedAttribute('spot')}}</p>
+            @endif
+            <div class="thm-breadcrumb__inner mt-2">
+                {!! Breadcrumbs::view('breadcrumbs.index','page') !!}
+                {!! Breadcrumbs::view('breadcrumbs::json-ld','page') !!}
             </div>
         </div>
     </div>
