@@ -51,7 +51,8 @@ protected $translatable = ['title', 'text','hero','slug','meta_title','meta_desc
         if($search != null){
             $data = $data->whereTranslation('title', 'like', '%' . $search . '%', [app()->getLocale()],app()->getLocale() == 'tr' ? true:false)
             ->whereTranslation('spot', 'like', '%' . $search . '%', [app()->getLocale()],app()->getLocale() == 'tr' ? true:false,'or')
-            ->whereTranslation('text', 'like', '%' . $search . '%', [app()->getLocale()],app()->getLocale() == 'tr' ? true:false,'or');
+            ->whereTranslation('text', 'like', '%' . $search . '%', [app()->getLocale()],app()->getLocale() == 'tr' ? true:false,'or')
+            ->whereTranslation('meta_tags', 'like', '%' . $search . '%', [app()->getLocale()],app()->getLocale() == 'tr' ? true:false,'or');
         }
 
         if($paginate){

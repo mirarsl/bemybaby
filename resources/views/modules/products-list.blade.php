@@ -1,10 +1,6 @@
 @php
 $term = strip_tags(request()->term);
 
-// if(isset($term) && ($term == '' || $term == null)){
-//     return redirect()->route('page', $Page->getTranslatedAttribute('slug'));
-// }
-
 if(isset($term)){
     $data = $module->data(12,$term);
 }else{
@@ -76,7 +72,7 @@ if(isset($term)){
             </div>
             
             <div class="col-xl-3 col-lg-12">
-                <div class="product__sidebar">
+                <div class="product__sidebar position-sticky">
                     <div class="shop-search product__sidebar-single">
                         <h2 class="product__sidebar-title @if (isset($term) && $term != '') mb-1 @else mb-3 @endif">{{__('search')}}</h2>
                         @if (isset($term) && $term != '')

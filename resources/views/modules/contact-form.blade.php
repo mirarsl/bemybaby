@@ -1,4 +1,4 @@
-<div class="rts-contact-page-form-area contact-2 rts-section-gapBottom">
+{{-- <div class="rts-contact-page-form-area contact-2 rts-section-gapBottom">
     <div class="container">
         <div class="row">
             @if($module->data()->iframe_url)
@@ -143,4 +143,4 @@
         bottom: -8px;
     }
 </style>
-@endpush
+@endpush --}}

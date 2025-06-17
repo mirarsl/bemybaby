@@ -106,7 +106,7 @@
                                                 <span class="icon-pin"></span>
                                             </div>
                                             <div class="footer-widget__contact-content">
-                                                <span>Adres</span>
+                                                <span>{{$sharedContent['Contact']->getTranslatedAttribute('contact1')}} Adres</span>
                                                 <p class="footer-widget__contact-text">{{$sharedContent['Contact']->getTranslatedAttribute('address1')}}</p>
                                             </div>
                                         </li>
@@ -299,5 +299,20 @@
     @stack('modals')
 
     <script src="/assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.min.js"></script>
+    <script>
+        lazyload();
+    </script>
+    @if (session()->has('dialog'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            title: "{{ session('status') == 'success' ? __('success') : __('error') }}",
+            text: "{{ session('message') }}",
+            icon: "{{ session('status') }}",
+            confirmButtonText: "@lang('confirm')",
+        });
+    </script>
+    @endif
 </body>
 </html>

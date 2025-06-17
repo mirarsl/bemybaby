@@ -14,7 +14,7 @@
 @endsection
 @section('content')
 <section class="page-header">
-    <div class="page-header__bg" style="background-image: url({{Voyager::image($Page->banner ?? $Meta->image)}});">
+    <div class="page-header__bg" style="background-image: url({{Voyager::image($Page->banner != null ? $Page->banner : $Meta->image)}});">
     </div>
     <div class="container">
         <div class="page-header__inner">

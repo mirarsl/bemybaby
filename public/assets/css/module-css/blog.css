@@ -1062,12 +1062,43 @@
     font-size: 48px;
     font-weight: 700;
     line-height: 55px;
-    margin: 17px 0 20px;
+    margin: 15px 0;
+}
+.blog-details__text h2,
+.blog-details__text h3,
+.blog-details__text h4,
+.blog-details__text h5,
+.blog-details__text h6 {
+    margin: 15px 0;
+}
+.blog-details__text p {
+    margin-bottom: 15px;
 }
 
-.blog-details__text-2 {
-    margin: 20px 0 33px;
+.blog-details__text ul {
+    position: relative;
+    display: block;
+    margin: 30px 0 30px;
+    padding-left: 1em;
 }
+
+.blog-details__text ul li {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.blog-details__text ul li strong{
+    white-space: nowrap;
+}
+
+.blog-details__text ul li::before {
+    content: "\e92a";
+    font-family: 'icomoon' !important;
+    margin-right: .5em;
+    font-size: 12px;
+    color: var(--bemybaby-base);
+}
+
 
 .blog-details__title-2 {
     font-size: 24px;
@@ -1141,36 +1172,6 @@
     border-radius: var(--bemybaby-bdr-radius);
 }
 
-.blog-details__points-list {
-    position: relative;
-    display: block;
-    margin: 30px 0 30px;
-}
-
-.blog-details__points-list li {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.blog-details__points-list li+li {
-    margin-top: 13px;
-}
-
-.blog-details__points-list li .icon {
-    position: relative;
-    display: inline-block;
-}
-
-.blog-details__points-list li .icon span {
-    position: relative;
-    display: inline-block;
-    font-size: 14px;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--bemybaby-black);
-}
-
 .blog-details__tag-and-social {
     position: relative;
     display: flex;
@@ -1182,6 +1183,7 @@
 .blog-details__tag {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 20px;
 }
@@ -1196,16 +1198,20 @@
     position: relative;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 5px;
+    flex-wrap: wrap;
 }
 
 .blog-details__tag-list a {
     position: relative;
     display: block;
     border: 1px solid rgba(var(--bemybaby-black-rgb), .20);
-    padding: 4px 15px 4px;
+    padding: 4px 9px;
     border-radius: 20px;
     color: var(--bemybaby-gray);
+    font-size: 13px;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .blog-details__tag-list a:hover {
@@ -1780,9 +1786,15 @@
 }
 
 .sidebar__need-help-title {
-    font-size: 24px;
+    font-size: 40px;
     font-weight: 700;
-    line-height: 34px;
+    line-height: 44px;
+    color: var(--bemybaby-base);
+    -webkit-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.sidebar__need-help:hover .sidebar__need-help-title{
+    color: var(--bemybaby-gray);
 }
 
 .sidebar__need-help-icon {
@@ -1790,30 +1802,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 86px;
-    height: 86px;
-    background-color: var(--bemybaby-primary);
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    margin: 33px auto 32px;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
 }
 
-.sidebar__need-help-icon:hover {
-    background-color: var(--bemybaby-base);
-}
 
 .sidebar__need-help-icon span {
     position: relative;
     display: inline-block;
-    font-size: 32px;
-    color: var(--bemybaby-black);
+    font-size: 24px;
+    color: var(--bemybaby-base);
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
 }
 
-.sidebar__need-help-icon:hover span {
-    color: var(--bemybaby-white);
+.sidebar__need-help:hover .sidebar__need-help-icon span{
+    color: var(--bemybaby-gray);
 }
 
 .sidebar__need-help-call {
@@ -1850,6 +1857,9 @@
     position: relative;
     display: block;
     margin-bottom: 80px;
+}
+.blog-list__single:last-child {
+    margin-bottom: 0;
 }
 
 .blog-list__img-box {
@@ -2054,7 +2064,7 @@
     font-size: 48px;
     font-weight: 700;
     line-height: 55px;
-    margin: 18px 0 40px;
+    margin: 18px 0 30px;
 }
 
 .blog-list__title a {
@@ -2117,6 +2127,7 @@
 .blog-list__pagination .pg-pagination li a:hover,
 .blog-list__pagination .pg-pagination li.active a {
     background-color: var(--bemybaby-primary);
+    color: white;
 }
 
 /*--------------------------------------------------------------

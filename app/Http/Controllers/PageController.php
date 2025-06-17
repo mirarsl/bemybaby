@@ -252,6 +252,10 @@ class PageController extends Controller
         $Other = Blog::whereTranslation('slug','!=',$request->slug, [app()->getLocale()],app()->getLocale() == 'tr' ? true:false)->order()->limit(3)->get();
         if (empty($Page)) abort(404);
         $Route = 'blog';
+
+        $Prev = Blog::order()->where('id','<',$Page->id)->get()->first();
+        $Next = Blog::order()->where('id','>',$Page->id)->get()->last();
+
         
         
         SEOTools::setTitle($Page->getTranslatedAttribute('meta_title') != '' ? $Page->getTranslatedAttribute('meta_title') : $Page->getTranslatedAttribute('title'));
@@ -277,7 +281,7 @@ class PageController extends Controller
             $trail->push($Page->getTranslatedAttribute('title'), route('news', $Page->getTranslatedAttribute('slug')));
         });
         
-        return view('details.blog-details',compact('Page','Meta', 'Route','Other'));
+        return view('details.blog-details',compact('Page','Meta', 'Route','Other','Prev','Next'));
     }
     
     

@@ -467,12 +467,6 @@
     display: block;
     border-radius: 0px;
 }
-
-.contact-page__input-box.text-message-box {
-    height: 182px;
-    margin-bottom: 40px;
-}
-
 .contact-page__btn-box {
     position: relative;
     display: block;
@@ -505,7 +499,6 @@
     border: 2px solid var(--bemybaby-bdr-color);
     border-radius: var(--bemybaby-bdr-radius);
     padding: 20px 38px 21px;
-    max-width: 280px;
     width: 100%;
     gap: 20px;
 }
@@ -554,6 +547,10 @@
 .contact-page__contact-list li .content p {
     color: var(--bemybaby-gray);
 }
+.contact-page__contact-list li .content p strong{
+    min-width: 60px;
+    display: inline-block;
+}
 
 .contact-page__contact-list li .content p a {
     color: var(--bemybaby-gray);
@@ -564,7 +561,11 @@
 }
 
 
-
+.contact-page__map {
+    position: relative;
+    display: block;
+    margin-top: 60px;
+}
 
 
 
