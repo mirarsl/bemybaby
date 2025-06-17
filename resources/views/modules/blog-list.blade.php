@@ -64,14 +64,14 @@ if(isset($term)){
                         </form>
                     </div>
                     <div class="sidebar__single sidebar__need-help">
-                        <div class="d-flex align-items-center gap-3 mb-3">
-                            <div class="sidebar__need-help-icon">
-                                <span class="icon-call"></span>
-                            </div>
-                            <h2 class="sidebar__need-help-title">Bilgi Al</h2>
-                        </div>
+                        <h2 class="sidebar__need-help-title">Bilgi Al</h2>
                         <div class="sidebar__need-help-call">
-                            <a href="tel:{{$sharedContent['Contact']->getTranslatedAttribute('phone1')}}">{{$sharedContent['Contact']->getTranslatedAttribute('phone1')}}</a>
+                            <div class="d-flex align-items-center gap-1 mb-3">
+                                <div class="sidebar__need-help-icon">
+                                    <span class="icon-call"></span>
+                                </div>
+                                <a href="tel:{{$sharedContent['Contact']->getTranslatedAttribute('phone1')}}">{{$sharedContent['Contact']->getTranslatedAttribute('phone1')}}</a>
+                            </div>
                         </div>
                     </div>
                 </div>

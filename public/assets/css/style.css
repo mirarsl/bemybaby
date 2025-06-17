@@ -1424,7 +1424,7 @@ ul {
   color: var(--bemybaby-base);
 }
 
-.mobile-nav__contact li>i {
+.mobile-nav__contact li i {
   width: 30px;
   height: 30px;
   border-radius: 50%;

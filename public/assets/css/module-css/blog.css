@@ -1085,6 +1085,7 @@
 .blog-details__text ul li {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 }
 .blog-details__text ul li strong{
@@ -1781,17 +1782,14 @@
     display: block;
     background-color: #FFF3EA;
     border-radius: var(--bemybaby-bdr-radius);
-    text-align: center;
     padding: 42px 50px 42px;
 }
 
 .sidebar__need-help-title {
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 44px;
     color: var(--bemybaby-base);
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
+    margin-bottom: 15px;
 }
 .sidebar__need-help:hover .sidebar__need-help-title{
     color: var(--bemybaby-gray);
@@ -1802,8 +1800,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;

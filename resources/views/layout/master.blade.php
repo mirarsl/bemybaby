@@ -219,18 +219,26 @@
 
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:{{$sharedContent['Contact']->getTranslatedAttribute('email1')}}">{{$sharedContent['Contact']->getTranslatedAttribute('email1')}}</a>
-                    @if ($sharedContent['Contact']->getTranslatedAttribute('email2'))
-                    <a href="mailto:{{$sharedContent['Contact']->getTranslatedAttribute('email2')}}">{{$sharedContent['Contact']->getTranslatedAttribute('email2')}}</a>
-                    @endif
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                    </div>
+                    <div>
+                        <p><a href="mailto:{{$sharedContent['Contact']->getTranslatedAttribute('email1')}}">{{$sharedContent['Contact']->getTranslatedAttribute('email1')}}</a></p>
+                        @if ($sharedContent['Contact']->getTranslatedAttribute('email2'))
+                        <p><a href="mailto:{{$sharedContent['Contact']->getTranslatedAttribute('email2')}}">{{$sharedContent['Contact']->getTranslatedAttribute('email2')}}</a></p>
+                        @endif
+                    </div>
                 </li>
                 <li>
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:{{$sharedContent['Contact']->getTranslatedAttribute('phone1')}}">{{$sharedContent['Contact']->getTranslatedAttribute('phone1')}}</a>
-                    @if ($sharedContent['Contact']->getTranslatedAttribute('phone2'))
-                    <a href="tel:{{$sharedContent['Contact']->getTranslatedAttribute('phone2')}}">{{$sharedContent['Contact']->getTranslatedAttribute('phone2')}}</a>
-                    @endif
+                    <div>
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <p><a href="tel:{{$sharedContent['Contact']->getTranslatedAttribute('phone1')}}">{{$sharedContent['Contact']->getTranslatedAttribute('phone1')}}</a></p>
+                        @if ($sharedContent['Contact']->getTranslatedAttribute('phone2'))
+                        <p><a href="tel:{{$sharedContent['Contact']->getTranslatedAttribute('phone2')}}">{{$sharedContent['Contact']->getTranslatedAttribute('phone2')}}</a></p>
+                        @endif
+                    </div>
                 </li>
             </ul>
             <div class="mobile-nav__top">
