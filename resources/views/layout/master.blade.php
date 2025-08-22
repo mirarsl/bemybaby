@@ -73,7 +73,7 @@
                                 </div>
                                 <div class="main-menu__right">
                                     <div class="main-menu__thm-btn">
-                                        <a target="_blank" rel="nofollow" href="https://www.e-bebek.com/search?q=:relevance:allCategories:4432:brand:1994:relevance::gender:Unisex" class="thm-btn">Mağaza <span class="fas fa-cart-plus"></span> </a>
+                                        <a target="_blank" rel="nofollow" href="{{setting('site.magaza')}}" class="thm-btn">Mağaza <span class="fas fa-cart-plus"></span> </a>
                                     </div>
                                     <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
                                 </div>
