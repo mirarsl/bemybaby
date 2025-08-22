@@ -309,7 +309,7 @@
     carousel.owlCarousel({
       loop: $(carousel).data('count') > 2,
       margin: 100,
-      center: true,
+      center: false,
       nav: $(carousel).data('count') > 3,
       dots: $(carousel).data('count') > 3,
       smartSpeed: 500,
@@ -327,13 +327,13 @@
           items: 2,
         },
         992: {
-          items: 3,
+          items: 2,
         },
         1200: {
-          items: 3,
+          items: 2,
         },
         1320: {
-          items: 3,
+          items: 2,
         },
       },
     });
