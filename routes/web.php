@@ -27,11 +27,12 @@ Route::group(['prefix' => 'admin'], function () {
 include 'redirects.php';
 
 Route::get('cacheClear',function(){
+    Artisan::call('optimize:clear');
     Artisan::call('config:clear');
     Artisan::call('cache:clear');
     Artisan::call('view:clear');
     Artisan::call('route:clear');
-    Artisan::call('optimize:clear');
+    Artisan::call('config:cache');
     return redirect()->back();
 });
 
