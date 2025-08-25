@@ -10,6 +10,7 @@ use App\Search;
 use App\Service;
 use App\Social;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use TCG\Voyager\Facades\Voyager;
@@ -35,6 +36,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
+        // HTTPS'i zorla (production ortamında)
+        if(config('app.env') === 'production') {
+            URL::forceScheme('https');
+        }
+
         Carbon::now('Europe/Istanbul');
         setlocale(LC_TIME, 'Turkish');
         $Contact = Contact::find(1);
@@ -51,5 +57,8 @@ class AppServiceProvider extends ServiceProvider
             'Search' => $Search
         ];
         View::share("sharedContent",$sharedContent);
+
+
+        
     }
 }
