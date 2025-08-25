@@ -205,7 +205,7 @@ class PageController extends Controller
             $trail->push(__('pages.home'), '/'.(app()->getLocale() == 'tr' ? '' : app()->getLocale()));
             $trail->push(__('pages.products'), route('page', __('links.products')));
             if(isset($Page->category)){
-            $trail->push(Str::plural($Page->category->getTranslatedAttribute('title')), route('product_group', $Page->category->getTranslatedAttribute('slug')));
+            $trail->push($this->turkishPlural($Page->category->getTranslatedAttribute('title')), route('product_group', $Page->category->getTranslatedAttribute('slug')));
             }
             $trail->push($Page->getTranslatedAttribute('title'), route('product', $Page->getTranslatedAttribute('slug')));
         });
@@ -354,5 +354,32 @@ class PageController extends Controller
         
         $content = view('sitemap.index', $compact);
         return response($content)->header('Content-Type', 'application/xml');
+    }
+
+    /**
+     * Türkçe çoğul ekini basit ünlü uyumuna göre ekler.
+     */
+    private function turkishPlural(string $word): string
+    {
+        $lower = mb_strtolower($word, 'UTF-8');
+        // Zaten lar/ler ile bitiyorsa dokunma
+        if (mb_substr($lower, -3, null, 'UTF-8') === 'lar' || mb_substr($lower, -3, null, 'UTF-8') === 'ler') {
+            return $word;
+        }
+        $backVowels = ['a','ı','o','u'];
+        $frontVowels = ['e','i','ö','ü'];
+        $lastVowel = null;
+        for ($i = mb_strlen($lower, 'UTF-8') - 1; $i >= 0; $i--) {
+            $ch = mb_substr($lower, $i, 1, 'UTF-8');
+            if (in_array($ch, array_merge($backVowels, $frontVowels), true)) {
+                $lastVowel = $ch;
+                break;
+            }
+        }
+        $suffix = 'lar';
+        if ($lastVowel !== null && in_array($lastVowel, $frontVowels, true)) {
+            $suffix = 'ler';
+        }
+        return $word.$suffix;
     }
 }
