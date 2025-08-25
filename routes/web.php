@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MyVoyagerController;
 use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -25,6 +26,13 @@ Route::group(['prefix' => 'admin'], function () {
 
 include 'redirects.php';
 
+Route::get('cacheClear',function(){
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    return redirect()->back();
+});
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
