@@ -31,6 +31,7 @@ Route::get('cacheClear',function(){
     Artisan::call('cache:clear');
     Artisan::call('view:clear');
     Artisan::call('route:clear');
+    Artisan::call('optimize:clear');
     return redirect()->back();
 });
 
