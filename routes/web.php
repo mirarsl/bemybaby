@@ -26,16 +26,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 include 'redirects.php';
 
-Route::get('cacheClear',function(){
-    Artisan::call('optimize:clear');
-    Artisan::call('config:clear');
-    Artisan::call('cache:clear');
-    Artisan::call('view:clear');
-    Artisan::call('route:clear');
-    Artisan::call('event:clear');
-    return redirect()->back();
-});
-
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
     Route::get(LaravelLocalization::transRoute('routes.sitemap'), [PageController::class, 'sitemap'])->name('sitemap');
