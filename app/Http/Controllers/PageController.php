@@ -347,9 +347,10 @@ class PageController extends Controller
     {
         $compact = Cache::remember('sitemap', 60*60*24, function () {
             $Page = Page::all()->except(1)->except(0)->except(66);
+            $Category = Category::get();
             $Service = Service::active()->order()->get();
             $News = News::active()->order()->get();
-            return compact('Page','Service','News');
+            return compact('Page','Service','News','Category');
         });
         
         $content = view('sitemap.index', $compact);
