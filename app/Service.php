@@ -26,4 +26,8 @@ class Service extends Model
         return $query->orderBy('ordering')->orderBy('id','desc');
     }
 
+
+    public function category(){
+        return $this->belongsTo(Category::class,'category_id','id');
+    }
 }

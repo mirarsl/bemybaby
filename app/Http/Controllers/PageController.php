@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Accreditation;
 use App\Blog;
+use App\Category;
 use App\Client;
 use App\ClientCategory;
 use App\CoverageCity;
@@ -203,10 +204,45 @@ class PageController extends Controller
         Breadcrumbs::for('page', function (BreadcrumbTrail $trail) use ($Page) {
             $trail->push(__('pages.home'), '/'.(app()->getLocale() == 'tr' ? '' : app()->getLocale()));
             $trail->push(__('pages.products'), route('page', __('links.products')));
+            if(isset($Page->category)){
+            $trail->push(Str::plural($Page->category->getTranslatedAttribute('title')), route('product_group', $Page->category->getTranslatedAttribute('slug')));
+            }
             $trail->push($Page->getTranslatedAttribute('title'), route('product', $Page->getTranslatedAttribute('slug')));
         });
         
         return view('details.product-details',compact('Page','Meta','Route','Other'));
+    }
+
+    function product_group(Request $request)
+    {
+        $Page = Category::whereTranslation('slug','=', $request->slug, [app()->getLocale()],app()->getLocale() == 'tr' ? true:false)->first();
+        if (empty($Page)) abort(404);
+        $Meta = Page::where('slug', 'urunler')->first();
+        $Route = 'product_group';
+        
+        SEOTools::setTitle($Page->getTranslatedAttribute('meta_title') != '' ? $Page->getTranslatedAttribute('meta_title') : $Page->getTranslatedAttribute('title'));
+        SEOTools::setDescription($Page->getTranslatedAttribute('meta_desc'));
+        SEOMeta::addKeyword(explode(',', $Page->getTranslatedAttribute('meta_tags')));
+        SEOTools::setCanonical(url()->full());
+        SEOTools::opengraph()->setTitle(SEOTools::getTitle());
+        SEOTools::opengraph()->setUrl(url()->full());
+        if($Page->image != null){
+            SEOTools::opengraph()->addImage(url(asset($Page->image)));
+        }
+        SEOTools::opengraph()->addProperty('type', 'articles');
+        SEOTools::opengraph()->addProperty('locale', 'tr');
+        SEOTools::twitter()->setTitle(SEOTools::getTitle());
+        SEOTools::jsonLd()->setTitle(SEOTools::getTitle());
+        if($Page->image != null){
+            SEOTools::jsonLd()->addImage(url(asset($Page->image)));
+        }
+        Breadcrumbs::for('page', function (BreadcrumbTrail $trail) use ($Page) {
+            $trail->push(__('pages.home'), '/'.(app()->getLocale() == 'tr' ? '' : app()->getLocale()));
+            $trail->push(__('pages.products'), route('page', __('links.products')));
+            $trail->push($Page->getTranslatedAttribute('title'), route('product_group', $Page->getTranslatedAttribute('slug')));
+        });
+        
+        return view('details.product-list',compact('Page','Meta','Route'));
     }
     
 
