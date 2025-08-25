@@ -1085,6 +1085,7 @@
 .blog-details__text ul li {
     position: relative;
     display: flex;
+    gap: 4px;
     flex-wrap: wrap;
     align-items: center;
 }
